@@ -16,11 +16,7 @@ app.use(bodyParser.json());
 
 const atlasURI = process.env.ATLAS_URI;
 mongoose.connect(atlasURI, {
-  dbName: 'PfeHamza', 
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 5000,
-  socketTimeoutMS: 45000
+  dbName: 'PfeHamza'
 })
 .then(() => {
   console.log('Connected to MongoDB Atlas');
