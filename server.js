@@ -31,23 +31,6 @@ mongoose.connect(atlasURI, {
 });
 
 
-const localURI = process.env.LOCAL_URI;
-const localConnection = mongoose.createConnection(localURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 5000,
-  socketTimeoutMS: 45000
-});
-
-localConnection.on('connected', () => {
-  console.log('Connected to local MongoDB');
-});
-
-localConnection.on('error', (error) => {
-  console.error('Local connection error:', error);
-});
-
-
 app.use('/api', apiRoutes);
 
 
